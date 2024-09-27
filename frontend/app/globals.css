@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
+}
+
+.pannel-width {
+	width: calc(100vw - 100vh);
+}
+
+.circle-animation {
+	animation: rotate 2s linear infinite;
+	transform-origin: left center;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.loading-container {
+	display: flex;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.loading-container .dot {
+	width: 30px;
+	height: 30px;
+	background-color: #1c8fed;
+	border-radius: 25px;
+	margin: 0 5px;
+}
+.loading-container .dot1 {
+	animation: dot1Anim 900ms ease-in-out infinite;
+}
+.loading-container .dot2 {
+	animation: dot1Anim 900ms ease-in-out 300ms infinite;
+}
+.loading-container .dot3 {
+	animation: dot1Anim 900ms ease-in-out 600ms infinite;
+}
+
+.ball1 {
+	animation: ball1Anim 900ms ease-in-out infinite;
+}
+
+.ball2 {
+	animation: ball2Anim 900ms ease-in-out infinite;
+}
+
+.ball3 {
+	animation: ball3Anim 900ms ease-in-out infinite;
+}
+
+.ball4 {
+	animation: ball4Anim 900ms ease-in-out infinite;
+}
+
+.notification-line {
+	animation: notification-line-anime 5000ms ease-in forwards;
+	transform-origin: left;
+}
+
+.notification-close {
+	animation: notification-close-anime 400ms ease-in forwards;
+}
+
+@keyframes notification-close-anime {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(110%);
+	}
+}
+
+@keyframes notification-line-anime {
+	from {
+		transform: scaleX(100%);
+	}
+	to {
+		transform: scaleX(0%);
+	}
+}
+
+@keyframes ball1Anim {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes ball2Anim {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+@keyframes ball3Anim {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes ball4Anim {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+@keyframes dot1Anim {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}

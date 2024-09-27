@@ -1,0 +1,28 @@
+name: adsb
+
+services:
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        ports:
+            - '8001:8001'
+        volumes:
+            - ./backend:/code
+        
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        ports:
+            - '3000:3000'
+        volumes:
+            - ./frontend:/app
+
+    redis:
+        image: redis:latest
+        ports:
+            - '6379:6379'
+
+volumes:
+    adsb_db:
